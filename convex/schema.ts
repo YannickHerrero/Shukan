@@ -68,4 +68,16 @@ export default defineSchema({
     dailyCarbs: v.number(),
     dailyFat: v.number(),
   }).index("by_userId", ["userId"]),
+
+  mealTemplates: defineTable({
+    userId: v.string(),
+    name: v.string(),
+    defaultSlot: v.optional(mealSlotValidator),
+  }).index("by_userId", ["userId"]),
+
+  mealTemplateItems: defineTable({
+    templateId: v.id("mealTemplates"),
+    foodId: v.id("foods"),
+    servings: v.number(),
+  }).index("by_templateId", ["templateId"]),
 });
