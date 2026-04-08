@@ -1,6 +1,11 @@
 import { useConvexAuth } from "convex/react";
+import { BrowserRouter, useRoutes } from "react-router";
 import LoginForm from "./components/LoginForm";
-import Dashboard from "./components/Dashboard";
+import { routes } from "./routes";
+
+function AppRoutes() {
+  return useRoutes(routes);
+}
 
 export default function App() {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -17,5 +22,9 @@ export default function App() {
     return <LoginForm />;
   }
 
-  return <Dashboard />;
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
