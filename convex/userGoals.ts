@@ -17,8 +17,8 @@ export const upsert = mutation({
   args: {
     dailyKcal: v.number(),
     dailyProtein: v.number(),
-    dailyCarbs: v.number(),
-    dailyFat: v.number(),
+    dailyCarbs: v.optional(v.number()),
+    dailyFat: v.optional(v.number()),
   },
   handler: async (ctx, args) => {
     const { userId } = await getUserOrThrow(ctx);

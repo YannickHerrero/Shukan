@@ -67,18 +67,22 @@ export default function DayHeader({
               goal={goals.dailyProtein}
               color="#3b82f6"
             />
-            <MacroBar
-              label="Carbs"
-              current={totals.carbs}
-              goal={goals.dailyCarbs}
-              color="#f59e0b"
-            />
-            <MacroBar
-              label="Fat"
-              current={totals.fat}
-              goal={goals.dailyFat}
-              color="#ef4444"
-            />
+            {goals.dailyCarbs != null && (
+              <MacroBar
+                label="Carbs"
+                current={totals.carbs}
+                goal={goals.dailyCarbs}
+                color="#f59e0b"
+              />
+            )}
+            {goals.dailyFat != null && (
+              <MacroBar
+                label="Fat"
+                current={totals.fat}
+                goal={goals.dailyFat}
+                color="#ef4444"
+              />
+            )}
           </div>
         )}
       </div>
