@@ -33,7 +33,7 @@ export default function MealEntryRow({
   return (
     <SwipeableRow onDelete={handleDelete}>
       <div
-        className="flex items-center justify-between px-4 py-2 border-b last:border-b-0"
+        className="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-muted/50 transition-colors"
         onClick={handleTap}
       >
         <div className="flex-1 min-w-0">
