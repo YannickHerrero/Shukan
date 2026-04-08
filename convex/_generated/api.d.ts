@@ -9,6 +9,7 @@
  */
 
 import type * as ResendOTP from "../ResendOTP.js";
+import type * as ai from "../ai.js";
 import type * as auth from "../auth.js";
 import type * as foods from "../foods.js";
 import type * as http from "../http.js";
@@ -17,6 +18,7 @@ import type * as mealEntries from "../mealEntries.js";
 import type * as mealTemplates from "../mealTemplates.js";
 import type * as quickAdds from "../quickAdds.js";
 import type * as stats from "../stats.js";
+import type * as storage from "../storage.js";
 import type * as userGoals from "../userGoals.js";
 
 import type {
@@ -27,6 +29,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   ResendOTP: typeof ResendOTP;
+  ai: typeof ai;
   auth: typeof auth;
   foods: typeof foods;
   http: typeof http;
@@ -35,6 +38,7 @@ declare const fullApi: ApiFromModules<{
   mealTemplates: typeof mealTemplates;
   quickAdds: typeof quickAdds;
   stats: typeof stats;
+  storage: typeof storage;
   userGoals: typeof userGoals;
 }>;
 

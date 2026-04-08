@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { ChevronDown, ChevronUp, Plus, Copy, LayoutTemplate } from "lucide-react";
+import { ChevronDown, ChevronUp, Plus, Copy, LayoutTemplate, Sparkles } from "lucide-react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import type { Doc } from "../../../convex/_generated/dataModel";
@@ -79,6 +79,13 @@ export default function MealSlotSection({
             >
               <LayoutTemplate className="h-3 w-3" />
               Template
+            </button>
+            <button
+              onClick={() => navigate("/foods/ai")}
+              className="flex items-center gap-1 text-sm text-muted-foreground"
+            >
+              <Sparkles className="h-3 w-3" />
+              AI
             </button>
           </div>
           {showTemplates && templates && (

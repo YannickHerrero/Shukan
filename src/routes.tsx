@@ -12,6 +12,7 @@ import WeeklyPage from "@/pages/WeeklyPage";
 import TemplatesPage from "@/pages/TemplatesPage";
 import TemplateFormPage from "@/pages/TemplateFormPage";
 import BarcodeScanPage from "@/pages/BarcodeScanPage";
+import AIRecognitionPage from "@/pages/AIRecognitionPage";
 
 export const routes: RouteObject[] = [
   {
@@ -22,6 +23,7 @@ export const routes: RouteObject[] = [
       { path: "foods/new", element: <FoodFormPage /> },
       { path: "foods/:id/edit", element: <FoodFormPage /> },
       { path: "foods/scan", element: <BarcodeScanPage /> },
+      { path: "foods/ai", element: <AIRecognitionPage /> },
       { path: "log/:date/:mealSlot", element: <AddEntryPage /> },
       { path: "log/:date/:mealSlot/quick", element: <QuickAddPage /> },
       { path: "log/:date/:mealSlot/copy", element: <CopyMealPage /> },
