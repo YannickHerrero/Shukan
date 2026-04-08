@@ -69,6 +69,13 @@ export default defineSchema({
     dailyFat: v.optional(v.number()),
   }).index("by_userId", ["userId"]),
 
+  weightEntries: defineTable({
+    userId: v.string(),
+    date: v.string(),
+    weight: v.number(),
+  })
+    .index("by_userId_and_date", ["userId", "date"]),
+
   mealTemplates: defineTable({
     userId: v.string(),
     name: v.string(),

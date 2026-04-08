@@ -20,6 +20,7 @@ import type * as quickAdds from "../quickAdds.js";
 import type * as stats from "../stats.js";
 import type * as storage from "../storage.js";
 import type * as userGoals from "../userGoals.js";
+import type * as weightEntries from "../weightEntries.js";
 
 import type {
   ApiFromModules,
@@ -40,6 +41,7 @@ declare const fullApi: ApiFromModules<{
   stats: typeof stats;
   storage: typeof storage;
   userGoals: typeof userGoals;
+  weightEntries: typeof weightEntries;
 }>;
 
 /**

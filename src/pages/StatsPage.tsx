@@ -4,6 +4,7 @@ import { api } from "../../convex/_generated/api";
 import CalorieAverageCard from "@/components/stats/CalorieAverageCard";
 import ProteinTrendCard from "@/components/stats/ProteinTrendCard";
 import ComplianceHeatmap from "@/components/stats/ComplianceHeatmap";
+import WeightTrendCard from "@/components/stats/WeightTrendCard";
 
 const ranges = [
   { label: "7d", days: 7 },
@@ -34,6 +35,11 @@ export default function StatsPage() {
     endDate: dates[dates.length - 1],
   });
   const goals = useQuery(api.userGoals.get);
+
+  const weightEntries = useQuery(api.weightEntries.getRange, {
+    startDate: dates[0],
+    endDate: dates[dates.length - 1],
+  });
 
   const heatmapDates = getDatesForRange(90);
   const heatmapData = useQuery(api.stats.getDailyTotals, {
@@ -74,6 +80,8 @@ export default function StatsPage() {
           />
         </>
       )}
+
+      {weightEntries && <WeightTrendCard entries={weightEntries} />}
 
       {heatmapData && goals && (
         <ComplianceHeatmap

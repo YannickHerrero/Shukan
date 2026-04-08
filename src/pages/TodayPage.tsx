@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDailyLog, MEAL_SLOTS } from "@/hooks/useDailyLog";
 import DayHeader from "@/components/today/DayHeader";
 import MealSlotSection from "@/components/today/MealSlotSection";
+import WeightInput from "@/components/today/WeightInput";
 
 function toDateString(d: Date) {
   return d.toISOString().slice(0, 10);
@@ -34,6 +35,7 @@ export default function TodayPage() {
         totals={totals}
         goals={goals}
       />
+      <WeightInput date={date} />
       {MEAL_SLOTS.map((slot) => (
         <MealSlotSection
           key={slot}
