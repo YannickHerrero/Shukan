@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { Plus, ScanBarcode } from "lucide-react";
 import FoodList from "@/components/foods/FoodList";
 
 const tabs = ["All", "Favorites", "Recent"] as const;
@@ -24,10 +24,19 @@ export default function FoodsPage() {
       <div className="p-4 space-y-3">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold">Foods</h1>
-          <Button size="sm" onClick={() => navigate("/foods/new")}>
-            <Plus className="h-4 w-4 mr-1" />
-            Add
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => navigate("/foods/scan")}
+            >
+              <ScanBarcode className="h-4 w-4" />
+            </Button>
+            <Button size="sm" onClick={() => navigate("/foods/new")}>
+              <Plus className="h-4 w-4 mr-1" />
+              Add
+            </Button>
+          </div>
         </div>
 
         <Input

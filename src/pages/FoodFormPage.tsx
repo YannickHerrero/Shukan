@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import type { Id } from "../../convex/_generated/dataModel";
@@ -9,6 +9,8 @@ import { ArrowLeft } from "lucide-react";
 export default function FoodFormPage() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
+  const [searchParams] = useSearchParams();
+  const barcodeFromScan = searchParams.get("barcode");
   const isEditing = !!id;
 
   const food = useQuery(
@@ -70,7 +72,9 @@ export default function FoodFormPage() {
                 servingUnit: food.servingUnit,
                 barcode: food.barcode ?? "",
               }
-            : undefined
+            : barcodeFromScan
+              ? { barcode: barcodeFromScan }
+              : undefined
         }
         onSubmit={handleSubmit}
         submitLabel={isEditing ? "Save Changes" : "Create Food"}
