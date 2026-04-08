@@ -18,7 +18,7 @@ export default function MacroChart({ totals }: { totals: DailyTotals }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="12"
-          className="text-muted"
+          className="text-muted-foreground/20"
         />
       </svg>
     );
