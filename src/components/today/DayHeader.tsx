@@ -38,7 +38,11 @@ export default function DayHeader({
         >
           {isToday ? "Today" : formatted}
         </button>
-        <button onClick={onNext} className="p-1">
+        <button
+          onClick={onNext}
+          disabled={isToday}
+          className={`p-1 ${isToday ? "opacity-0 pointer-events-none" : ""}`}
+        >
           <ChevronRight className="h-5 w-5" />
         </button>
       </div>
