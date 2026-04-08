@@ -1,9 +1,16 @@
 import { NavLink } from "react-router";
-import { UtensilsCrossed, Apple, BarChart3, Settings } from "lucide-react";
+import {
+  UtensilsCrossed,
+  Apple,
+  Calendar,
+  BarChart3,
+  Settings,
+} from "lucide-react";
 
 const tabs = [
   { to: "/", label: "Today", icon: UtensilsCrossed },
   { to: "/foods", label: "Foods", icon: Apple },
+  { to: "/weekly", label: "Weekly", icon: Calendar },
   { to: "/stats", label: "Stats", icon: BarChart3 },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;

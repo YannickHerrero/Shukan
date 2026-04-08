@@ -15,6 +15,7 @@ import type * as http from "../http.js";
 import type * as lib_auth from "../lib/auth.js";
 import type * as mealEntries from "../mealEntries.js";
 import type * as quickAdds from "../quickAdds.js";
+import type * as stats from "../stats.js";
 import type * as userGoals from "../userGoals.js";
 
 import type {
@@ -31,6 +32,7 @@ declare const fullApi: ApiFromModules<{
   "lib/auth": typeof lib_auth;
   mealEntries: typeof mealEntries;
   quickAdds: typeof quickAdds;
+  stats: typeof stats;
   userGoals: typeof userGoals;
 }>;
 
